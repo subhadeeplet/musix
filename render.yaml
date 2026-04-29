@@ -24,7 +24,7 @@ services:
     runtime: static
     rootDir: FRONTEND
     buildCommand: npm install && npm run build
-    staticPublishPath: dist
+    staticPublishPath: FRONTEND/dist
     envVars:
       - key: VITE_API_URL
         fromService:
