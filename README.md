@@ -1,4 +1,4 @@
-# Spotify Clone Project
+# Musix
 
 Full-stack Spotify-style app with a Node/Express backend and a Vite frontend.
 
