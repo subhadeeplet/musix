@@ -1,6 +1,11 @@
 import './styles.css';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+function normalizeUrl(url, fallback) {
+  if (!url) return fallback;
+  return /^https?:\/\//i.test(url) ? url : `https://${url}`;
+}
+
+const API = normalizeUrl(import.meta.env.VITE_API_URL, 'http://localhost:3000');
 
 const TOKEN_KEY = 'aura_token';
 const USER_KEY = 'aura_user';
