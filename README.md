@@ -57,13 +57,17 @@ Set `VITE_API_URL` to the deployed backend URL.
 
 ## Deployment Notes
 
-Deploy the backend as a Node web service with:
+This repo includes a `render.yaml` Blueprint for deploying both services on Render.
+
+In Render, create a new Blueprint from the GitHub repo and provide the prompted environment variables.
+
+Deploy the backend manually as a Node web service with:
 
 - Root directory: `BACKEND`
 - Build command: `npm install`
 - Start command: `npm start`
 
-Deploy the frontend as a static/Vite site with:
+Deploy the frontend manually as a static/Vite site with:
 
 - Root directory: `FRONTEND`
 - Build command: `npm install && npm run build`
