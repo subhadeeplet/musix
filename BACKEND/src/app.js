@@ -19,6 +19,17 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
+app.get('/', (req, res) => {
+    res.json({
+        status: 'ok',
+        message: 'Musix API is running',
+    });
+});
+
+app.get('/health', (req, res) => {
+    res.json({ status: 'ok' });
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/music', musicRoutes);
 
