@@ -14,10 +14,7 @@ services:
       - key: IMAGEKIT_PRIVATE_KEY
         sync: false
       - key: FRONTEND_URL
-        fromService:
-          type: web
-          name: musix-web
-          property: host
+        value: https://musix-web.onrender.com
 
   - type: web
     name: musix-web
@@ -27,7 +24,4 @@ services:
     staticPublishPath: FRONTEND/dist
     envVars:
       - key: VITE_API_URL
-        fromService:
-          type: web
-          name: musix-api
-          property: host
+        value: https://musix-api-61df.onrender.com

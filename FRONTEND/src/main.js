@@ -5,7 +5,15 @@ function normalizeUrl(url, fallback) {
   return /^https?:\/\//i.test(url) ? url : `https://${url}`;
 }
 
-const API = normalizeUrl(import.meta.env.VITE_API_URL, 'http://localhost:3000');
+const defaultApi =
+  window.location.hostname.endsWith('.onrender.com')
+    ? 'https://musix-api-61df.onrender.com'
+    : 'http://localhost:3000';
+
+const API = normalizeUrl(import.meta.env.VITE_API_URL, defaultApi).replace(
+  /^https:\/\/musix-api\.onrender\.com\/?$/i,
+  'https://musix-api-61df.onrender.com'
+);
 
 const TOKEN_KEY = 'aura_token';
 const USER_KEY = 'aura_user';
