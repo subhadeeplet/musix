@@ -21,7 +21,7 @@ services:
     runtime: static
     rootDir: FRONTEND
     buildCommand: npm install && npm run build
-    staticPublishPath: FRONTEND/dist
+    staticPublishPath: dist
     envVars:
       - key: VITE_API_URL
         value: https://musix-api-61df.onrender.com
